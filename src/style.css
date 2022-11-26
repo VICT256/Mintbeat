@@ -258,7 +258,6 @@ body {
     display: table;
   }
   .nav-links:hover {
-    background-color: #7577fa;
     border-radius: 0;
   }
   .navbar-nav {
@@ -326,10 +325,6 @@ body {
   padding: 8px 20px;
   color: #6568f4;
   transition: 250ms;
-}
-
-.btn-primary {
-  background-color: var(--primary);
 }
 
 .btn-outline {
