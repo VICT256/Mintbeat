@@ -2,8 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn-primary {
+    @apply bg-[#000000] px-5 py-[16px] border-none text-white text-[1rem] hover:bg-black font-semibold rounded-[37px] flex justify-between gap-3;
+  }
+
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
+}
+
+body {
+  background-color: #141414;
+  min-height: 100vh;
 }
