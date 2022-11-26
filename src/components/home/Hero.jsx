@@ -12,6 +12,7 @@ const Hero = () => {
 				style={{ background: "transparent url('/images/hero.png') 0% 0% no-repeat" }}
 				className="h-[398px] w-full pl-5 md:pl-20 flex items-center"
 			>
+				
 				<div className="text-white">
 					<h1 className="text-[18px] md:text-[2rem] font-medium">Sasha Sloan</h1>
 					<h2 className="text-[2rem] md:text-[3rem] font-semibold">At Least I Look Cool</h2>
