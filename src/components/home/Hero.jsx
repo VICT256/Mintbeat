@@ -10,13 +10,13 @@ const Hero = () => {
 			</div>
 			<div
 				style={{ background: "transparent url('/images/hero.png') 0% 0% no-repeat" }}
-				className="h-[398px] w-full pl-20 py-auto flex items-center"
+				className="h-[398px] w-full pl-5 md:pl-20 flex items-center"
 			>
 				<div className="text-white">
-					<h1 className="text-[2rem] font-medium">Sasha Sloan</h1>
-					<h2 className="text-[3rem] font-semibold">At Least I Look Cool</h2>
+					<h1 className="text-[18px] md:text-[2rem] font-medium">Sasha Sloan</h1>
+					<h2 className="text-[2rem] md:text-[3rem] font-semibold">At Least I Look Cool</h2>
 
-					<div className="flex items-center gap-[24px] mt-[70px]">
+					<div className="flex items-center lg:gap-[24px] gap-3 mt-[70px]">
 						<button className="btn-primary">
 							<span>Play Now</span>
 							<div className="w-[20px] h-[20px] rounded-full bg-[#E9003F] flex items-center justify-center">
