@@ -1,7 +1,11 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body{
-    background-color: black !important;
+    background-color: rgb(6, 5, 5) !important;
+    font-family: 'Roboto', sans-serif;
+
 }
+
 ::placeholder {
     color: white !important;
 }
@@ -37,7 +41,7 @@ body{
     height: 40px;
 }
 .nav-item a:hover{
-    color: #ff0022;
+    color: #E9003F;
 }
 
 .navbar-expand-lg .navbar-collapse {
@@ -80,6 +84,8 @@ body{
   display: flex;
 }
 .nav-item a{
+    font-size: 0.8em;
+
 padding-right: 0.6em;
 padding-left:  0.6em;}
 .justify-content-end {
@@ -107,14 +113,17 @@ padding-left:  0.6em;}
 
 .mint_beat_Img img{
     width: 30px;
-    margin: auto 0.4em 0 0;
+    margin: auto 0.4em auto 0;
     border-radius: 50%;
     border: 1px solid whitesmoke;
 }
 .mint_beat_Img {
-
+font-size: 0.8em;
     display: flex;
     color: white !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 .nav_top {
     padding-top: 3em;
@@ -181,7 +190,6 @@ padding-left:  0.6em;}
 }
 
 .nav-links:hover {
-  background-color: #6d76f7;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
@@ -282,9 +290,7 @@ padding-left:  0.6em;}
     transition: 250ms;
   }
 
-  Button {
-    display: none;
-  }
+ 
 }
 
 //button nav
@@ -326,12 +332,84 @@ padding-left:  0.6em;}
   color: #fff;
 }
 
-// .nav-item a::after {
-//     position: absolute;
-//     content: "";
-//     width: 50%;
-//     height: 2px;
-//     left: 25%;
-//     bottom: 0;
-//     background: #E81C2E;
-// }
+//NftInformation
+.mint_section{
+  padding-top: 3em;
+}
+
+.rowx{
+  display: table;
+
+}
+
+input[type=text], select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgba(204, 204, 204, 0);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: black !important;
+}
+.mint_section{
+  background-color: #060909;
+}
+.nft_Information header{
+  font-size: 1.4em;
+  padding-bottom: 1em;
+}
+
+.col50{
+  width: 50%;
+  float: left;
+  padding:0 1.5em;
+}
+
+.col40{
+  width: 40%;
+}
+form .col40 {
+margin-bottom: 1em;
+margin-right: 1em;
+}
+select{
+    padding: 12px 20px;
+  margin: 8px 2em 0 0;
+}
+
+textarea{
+  width: 100%;
+    background-color: black !important;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+input[type=text]:focus {
+  border: 1px solid rgb(142, 34, 34);
+}
+
+.submit_nft_btn{
+  background-color: #E9003F;
+  padding: 0.8em 5em;
+  display: table;
+  border-radius: 0.6em;
+  margin-top: 1em;
+}
+.add_music_nft header{
+  padding-bottom: 1.2em;
+  font-size: 1.5em;
+}
+.lkjDVC{
+  width: 100%;
+  height: 12em !important;
+}
+.add_music_nft .purchasable{
+  margin-top: 1.5em;
+}
+
+@media (max-width: 1100px) {
+
+.col50{
+  width: 100%;
+}
+}
