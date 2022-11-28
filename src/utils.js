@@ -38,7 +38,7 @@ export const playerOptions = {
 	autoHiddenCover: false,
 	spaceBar: true,
 	responsive: true,
-	mobileMediaQuery: '(max-width: 1024px)',
+	mobileMediaQuery: '(max-width: 0px)',
 	volumeFade: {
 		fadeIn: 1000,
 		fadeOut: 1000,
