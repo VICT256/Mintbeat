@@ -1,0 +1,412 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+::placeholder {
+    color: white !important;
+}
+//navbar
+.nav-item a{
+    color: white;
+}
+
+
+
+.search_input ::placeholder{
+    font-size: 0.8em;
+    opacity: 0.7 !important;
+}
+.ProfileImage .profile_nft_image{
+    width: 40px;
+    border-radius: 50%;
+}
+.arrow_buttom{
+    width: 30px;
+    height: 30px;
+}
+.profile_nav_section{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+}
+.nav_wallet{
+    width: 40px;
+    height: 40px;
+}
+.nav-item a:hover{
+    color: #E9003F;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    justify-content: center;
+    align-content: space-around;
+}
+.navbar-expand-lg .nav_justify_end{
+    display: flex !important;
+        flex-basis: auto;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: center;
+    align-content: space-around;
+}
+.d-flex{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+        border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 1rem;
+}
+
+.d-flex input{
+  padding: 0.2em 1em;
+
+}
+
+.d-flex img{
+    margin:  0 0.4em;
+    width: 20px;
+    height: 20px;
+}
+.justify-content-center .navbar-nav {
+  display: flex;
+}
+.nav-item a{
+    font-size: 0.8em;
+
+padding-right: 0.6em;
+padding-left:  0.6em;}
+.justify-content-end {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center; 
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color:transparent !important;
+    background-clip: padding-box;
+    border: transparent !important;
+    appearance: none;
+    border-radius: 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.mint_beat_Img img{
+    width: 30px;
+    margin: auto 0.4em auto 0;
+    border-radius: 50%;
+    border: 1px solid whitesmoke;
+}
+.mint_beat_Img {
+font-size: 0.8em;
+    display: flex;
+    color: white !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.nav_top {
+    padding-top: 3em;
+    padding-bottom: 2em;
+}
+
+.nav-link:hover:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 15%;
+    background-color: #E9003F;
+    display: inline-block;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+}
+.navbar {
+  background: linear-gradient(
+    90deg,
+    rgb(0, 0, 0) 0%,
+    rgb(0, 0, 0) 100%
+  );
+  height: 80px;
+  padding: 3em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.navbar-logo {
+  color: #fff;
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.fa-react {
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
+}
+#nav_menu{
+  display: flex;
+}
+
+.nav-menu {
+     display: flex;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+  margin-right: 2rem;
+}
+
+.nav-links {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.nav-links:hover {
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+
+.fa-bars {
+  color: #fff;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .navbar {
+    position: relative;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-menu.active {
+    background: rgb(18, 18, 18);
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-links:hover {
+    border-radius: 0;
+  }
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    background: #4ad9e4;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  .nav-links-mobile:hover {
+    background: #fff;
+    color: #6568f4;
+    transition: 250ms;
+  }
+
+ 
+}
+
+//button nav
+:root {
+  --primary: #3acbf7;
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.btn:hover {
+  padding: 8px 20px;
+  color: #6568f4;
+  transition: 250ms;
+}
+
+
+
+.btn-outline {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid var(--primary);
+}
+
+.btn-medium {
+  font-size: 18px;
+  color: #fff;
+}
+
+.btn-large {
+  padding: 12px 20px;
+  font-size: 20px;
+  color: #fff;
+}
+
+//NftInformation
+// .mint_section{
+//   padding-top: 3em;
+// }
+
+.rowx{
+  display: table;
+}
+
+input[type=text], select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgba(204, 204, 204, 0);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: black !important;
+}
+.mint_section{
+  background-color: #141414 !important;
+}
+.nft_Information header{
+  font-size: 1.4em;
+  padding-bottom: 1em;
+}
+
+.col50{
+  width: 50%;
+  float: left;
+  padding:0 1.5em;
+}
+
+.col40{
+  width: 40%;
+}
+form .col40 {
+margin-bottom: 1em;
+margin-right: 1em;
+}
+select{
+    padding: 12px 20px;
+  margin: 8px 2em 0 0;
+}
+
+textarea{
+  width: 100%;
+    background-color: black !important;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+input[type=text]:focus {
+  border: 1px solid rgb(142, 34, 34);
+}
+
+.submit_nft_btn{
+  background-color: #E9003F;
+  padding: 0.8em 5em;
+  display: table;
+  border-radius: 0.6em;
+  margin-top: 1em;
+}
+.add_music_nft header{
+  padding-bottom: 1.2em;
+  font-size: 1.5em;
+}
+.lkjDVC{
+  width: 100%;
+  height: 12em !important;
+}
+.add_music_nft .purchasable{
+  margin-top: 1.5em;
+}
+
+@media (max-width: 1100px) {
+
+.col50{
+  width: 100%;
+}
+}
