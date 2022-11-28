@@ -26,7 +26,7 @@ export default function NavBar() {
           )}
         </div>
         <div className={active ? "nav-menu active" : "nav-menu"} id="nav_menu">
-          <form class="d-flex search_input" role="search">
+          <form className="d-flex search_input" role="search">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAADCElEQVRoge2ZzUtUURjGn9vCjKRNhLkoQ4MEV22CFn4lQrVp0VKJIBAD/4ekFn38Fy2CaBPpNCpEkG00o5197PpYVJhEGJRa/VrcOzS8c5yZc+fcGaT5wSzOHe7zvM+cOV/3Sk2aZEJUy81Ah6SzkgYk9UrqlLQv+fqbpHeSViQ9kZSPouhTLX7BAQaBHPCL6tkCZoD+Rtcv4Cgw51H8duSB7kaFuAB8DxCiwDowVu8QV8sU9BK4DgwDx4C9yacnuXYDeFXm/ql6hbi2TQFLwJCHzkngaUPCEP+dLBvAOOA94wERMJFoWEazyFAY2HZMfAH6Amj3A2tGex3oClG7NbOz00aIEEX6A8Cm8ciF0i+YDDq6fjyoSexz2eET7McS8WJXzCIpxkQVPhHwzHhNhxLvIF6FixkIIu72GzJeW0B7COFLRnglQL2VPF8bz4u+Grsc1+yvH6ary/PAtAd9BVxBek37ka9oCqyHraEiriCdpv3BVzQF7yvU4A+lq25bzaKVPduM509fDVePWIJPuw5sHVu1CkjSuml3+IqmwHqs+gq4grw17UO+oik4bNqffQVcQey6MeIrmgLr8cJXwBVkwbTP+YqmwHo8rlkROOjYongvUB5+w8ZrA9gfSnzGiC+R3abxufG6HdKgn1Imghn885l0+BwPbZI3BpsEfCZFvOu1B6s7ofSLjbqJj5/FrBFgS098cLNH3VXgQIjaXYZjjq7fJD7ZpX34MOnoCYAFoCWLHAXzKYcpwDJwykNnmNKBbckDrY0IA/Gh6CYwQvxQri359CTXbgFvKgQoZpqMe2aU0jGTFTPA7izDdFH6YMKXP8A9YL6hYZJAfcR/AbsDKMcP4C5wItFoBWYr3JOrNkytL3raJZ1RfMbulXRE8Yue35LWJH2UtCxpUVIuiqKv5v5WSfclnS5j81DS+SiKNmqpNXOAFkq3RJZZspzNQlFlmLlmmHrzP4aZB/Y0utaKUN3UXN/3j2mp0DNXGl2fF9uE2VkhCpgwOzNEgWTMZPOytEmT8vwFxdlvsvNj/B0AAAAASUVORK5CYII=" />
             <input
               className="form-control me-2"
