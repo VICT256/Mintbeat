@@ -1,18 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import NavBar from "./components/Navbar";
-import "./index.css";
-import "./style.css";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import NavBar from './components/Navbar';
+import './index.css';
+import './style.css';
 
-import App from "./App";
-import { BrowserRouter } from "react-router-dom";
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <NavBar />
+	<BrowserRouter>
+		<NavBar />
 
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>
+		<App />
+	</BrowserRouter>
 );

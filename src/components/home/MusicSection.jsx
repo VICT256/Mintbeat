@@ -49,9 +49,9 @@ const recentlyPlayed = [
 
 const MusicSection = () => {
 	return (
-		<div className="mt-[32px] lg:grid lg:grid-cols-12 gap-20 w-full">
+		<div className="mt-[32px] lg:grid lg:grid-cols-12 gap-20 w-full text-white">
 			<div className="lg:col-span-5 w-full mb-10 lg:mb-0">
-				<div className="text-[#fff] mb-[25px]">
+				<div className="mb-[25px]">
 					<h1 className="text-[1.5rem] font-semibold">Made for you</h1>
 					<p className="text-base">The more you listen for better recommendation</p>
 				</div>
@@ -66,7 +66,7 @@ const MusicSection = () => {
 				</div>
 			</div>
 			<div className="lg:col-span-7">
-				<div className="text-[#fff] mb-[25px]">
+				<div className="mb-[25px]">
 					<h1 className="text-[1.5rem] font-semibold">Recently Played</h1>
 					<p className="text-base">Only for you for better live music</p>
 				</div>
@@ -86,7 +86,7 @@ const MusicSection = () => {
 									<div className="w-[67px] h-[67px] rounded-[11px] overflow-hidden">
 										<img src={item.cover} alt={item.music} className="w-full h-full" />
 									</div>
-									<p className="flex flex-col gap-2 text-white">
+									<p className="flex flex-col gap-2">
 										<span className="font-semibold text-[18px] md:text-[20px]">{item.artist}</span>
 										<span className="text-base">{item.music}</span>
 									</p>
