@@ -1,0 +1,43 @@
+.card {
+    /* margin: 2% auto; */
+    /* padding: 1.5rem; */
+    justify-content: center;  
+    /* display: flex; */
+    flex-wrap: wrap;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    /* max-width: 300px; */
+  }
+  .nftcard {
+    padding: 5px;
+    margin: 10px 10px 10px 10px;
+    border:1px solid rgba(120, 120, 120, 0.9);
+    height: 50%;
+    border-radius: 10px;
+    width: 30%;
+    color: black;
+    font-size:20px;
+    overflow-x: hidden;
+    /* margin: auto; */
+    text-align: center;
+  }
+  
+  .nftimage {
+    height: 60%;
+  }
+  
+  .background {
+    background-color: white;
+    color: white;
+    height: 100%;
+    width:60%;
+    display:flex;
+  }
+
+  
+.button {
+    background-color:blue; 
+    border-radius: 8px;
+    color: white;
+    padding:10px;
+    margin: 5px;
+  }
