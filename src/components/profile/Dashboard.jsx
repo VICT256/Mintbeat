@@ -66,20 +66,13 @@ export default function Dashboard() {
         : NFTs?.map((nft, index) => {
             <div key={index}>
               {/* <NFTcard key={index} nft={nft} /> */}
-              <h3>{NFT.ownedNfts[0].balance}</h3>
+              {console.log(nft)}
+              {/* <h3>{NFT.ownedNfts[0].balance}</h3> */}
               {console.log(NFT.ownedNfts[0].balance)}
             </div>;
           })}
       {/* {NFTs.length > 0 &&  NFTs.map((nft, index)=> <NFTcard key={index} nft={nft} />)} */}
 
-      <h1>
-        balance <br />
-        {NFTs?.balance} <br />
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore id
-        aperiam numquam vitae impedit ratione veniam consequatur officia quos,
-        esse autem unde perspiciatis? Expedita unde a mollitia aperiam ad
-        facilis.
-      </h1>
     </div>
   );
 }
