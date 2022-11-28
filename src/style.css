@@ -1,6 +1,8 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
+body {
+  font-family: "Roboto", sans-serif;
+}
 
 ::-moz-placeholder {
   color: white !important;
@@ -12,6 +14,44 @@
 
 ::placeholder {
   color: white !important;
+}
+
+input::-moz-selection {
+  color: rgb(0, 0, 0);
+  border: solid #E9003F !important;
+  border-width: 0 0 3px 0 !important;
+  padding-bottom: 2px;
+  outline: none;
+}
+
+input:focus,
+input:hover,
+input:active,
+input::selection {
+  color: rgb(0, 0, 0);
+  border: solid #E9003F !important;
+  border-width: 0 0 3px 0 !important;
+  padding-bottom: 2px;
+  outline: none;
+}
+
+textarea::-moz-selection {
+  color: rgb(0, 0, 0);
+  border: solid #E9003F !important;
+  border-width: 0 0 3px 0 !important;
+  padding-bottom: 2px;
+  outline: none;
+}
+
+textarea:focus,
+textarea:hover,
+textarea:active,
+textarea::selection {
+  color: rgb(0, 0, 0);
+  border: solid #E9003F !important;
+  border-width: 0 0 3px 0 !important;
+  padding-bottom: 2px;
+  outline: none;
 }
 
 .nav-item a {
@@ -171,6 +211,7 @@
 }
 
 .navbar {
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
   height: 80px;
   padding: 3em 0;
   display: flex;
@@ -343,10 +384,6 @@
   color: #fff;
 }
 
-.mint_section {
-  padding-top: 3em;
-}
-
 .rowx {
   display: table;
 }
@@ -355,10 +392,14 @@ input[type=text], select {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #0E0E0E;
-  border-radius: 8px;
+  border: 1px solid rgba(204, 204, 204, 0);
+  border-radius: 4px;
   box-sizing: border-box;
-  background-color: #111111 !important;
+  background-color: black !important;
+}
+
+.mint_section {
+  background-color: #141414 !important;
 }
 
 .nft_Information header {
@@ -388,9 +429,7 @@ select {
 
 textarea {
   width: 100%;
-  background-color: #111111 !important;
-  border: 1px solid #0E0E0E;
-  border-radius: 8px;
+  background-color: black !important;
   padding: 12px 20px;
   margin: 8px 0;
 }
