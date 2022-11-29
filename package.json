@@ -6,13 +6,18 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
+    "axios": "^1.2.0",
     "bootstrap": "^5.2.3",
+=======
+>>>>>>> 08e2a4410a71f7fe6519b5638d200aa6f01d20fc
     "daisyui": "^2.42.1",
     "dotenv": "^16.0.3",
+    "ethers": "^5.7.2",
     "flowbite": "^1.5.4",
     "flowbite-react": "^0.3.5",
+    "form-data": "^4.0.0",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-drag-drop-files": "^2.3.8",
     "react-h5-audio-player": "^3.8.6",
