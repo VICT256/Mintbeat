@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProfileImage from "../images/noNft.jpg";
 import MusicImage from "../images/music.png";
 import { Link } from "react-router-dom";
+import { ConnectToMetamask } from "./utils/functions/connect";
 
 export default function NavBar() {
   const [active, setActive] = useState(false);
@@ -81,7 +82,7 @@ export default function NavBar() {
           <div className="collapse justify-content-center" id="navbarNav ">
             <ul className="navbar-nav ">
               <li className="nav-item nav_wallet">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAACO0lEQVRoge2ZPWsUURSGz934kYAxjWIqYwTBXrBLZ2O1BCxS+gskWogSXFS09C/4H0xnTKeCBAlY+AGLohZJKpEY0ZVdH4vc6PFm5s51MzN3kPvAwtw5Z89537nztXdFEv8BQAuYAxaBNaAHfAAeABeAVmyNuQAngOf4eQKcjK11F1b8RoH4HT4CZ4BrwArwCdgCVoHbwNG6xbecI78FLADTwEHglBX2PdDgZ2C2bJFjVsRbYGAb3bGxOUf82ZwaM8C3QBOD0kxY8U8zmszY+KLat+CpM2mP7g4vgTYwbj9t4LUzE0fKMHAj5ygds/E1tW/aU+euynsFTGTkTDgmbpVh4I0qeB044MR7Kj7qqfNC5bU9ebMqb7UMA31V8FBGfF3FT3vqfFV54568wypvM1Sn7wEzorYvuTMgIitq+2Jgv32B/YIffCYvABBapAJ+ikhXRO6LyD1jzCAvsakGNMsict4Y088KNvcd5Q/nRGT+n7+l75vlayrsvR+4qiR083KDTiFjTG5eVdibRs8OB8aYzBtAY08hY8wPNRzJy2usgVCSgdgkA7FJBvYCMAUss/2L7hFwvMzilT+JrXjNUmkaajLwxTGw6cQLNcS+Bp4VjIenphmYApbsTDx0r4EQDY19mQvVEPsU2jPJQGySgdgkA7HxGfi9mMTuVbnKcXrmLmz5DLxX25frNGF7XVG73g1T5CbNoTOMgTG2/5yLzWM8y/dFJkaBDtDl7+X2qunbnp2hxScSiUQt/AKWRe4MEY5gxgAAAABJRU5ErkJggg==" />
+                <img onClick={ConnectToMetamask} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAACO0lEQVRoge2ZPWsUURSGz934kYAxjWIqYwTBXrBLZ2O1BCxS+gskWogSXFS09C/4H0xnTKeCBAlY+AGLohZJKpEY0ZVdH4vc6PFm5s51MzN3kPvAwtw5Z89537nztXdFEv8BQAuYAxaBNaAHfAAeABeAVmyNuQAngOf4eQKcjK11F1b8RoH4HT4CZ4BrwArwCdgCVoHbwNG6xbecI78FLADTwEHglBX2PdDgZ2C2bJFjVsRbYGAb3bGxOUf82ZwaM8C3QBOD0kxY8U8zmszY+KLat+CpM2mP7g4vgTYwbj9t4LUzE0fKMHAj5ygds/E1tW/aU+euynsFTGTkTDgmbpVh4I0qeB044MR7Kj7qqfNC5bU9ebMqb7UMA31V8FBGfF3FT3vqfFV54568wypvM1Sn7wEzorYvuTMgIitq+2Jgv32B/YIffCYvABBapAJ+ikhXRO6LyD1jzCAvsakGNMsict4Y088KNvcd5Q/nRGT+n7+l75vlayrsvR+4qiR083KDTiFjTG5eVdibRs8OB8aYzBtAY08hY8wPNRzJy2usgVCSgdgkA7FJBvYCMAUss/2L7hFwvMzilT+JrXjNUmkaajLwxTGw6cQLNcS+Bp4VjIenphmYApbsTDx0r4EQDY19mQvVEPsU2jPJQGySgdgkA7HxGfi9mMTuVbnKcXrmLmz5DLxX25frNGF7XVG73g1T5CbNoTOMgTG2/5yLzWM8y/dFJkaBDtDl7+X2qunbnp2hxScSiUQt/AKWRe4MEY5gxgAAAABJRU5ErkJggg==" />
               </li>
             </ul>
           </div>
