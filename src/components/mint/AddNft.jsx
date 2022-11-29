@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { FileUploader } from "react-drag-drop-files";
-const fileTypes = ["JPG", "PNG", "GIF"];
+const fileTypes = ["MP3"];
 
 export default function AddNft() {
      const [file, setFile] = useState(null);

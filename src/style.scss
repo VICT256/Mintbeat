@@ -7,6 +7,29 @@ body{
 ::placeholder {
     color: white !important;
 }
+
+input:focus,
+input:hover,
+input:active,
+input::selection {
+    color: rgb(0, 0, 0);
+    border: solid #E9003F !important;
+    border-width: 0 0 3px 0 !important;
+    padding-bottom: 2px;
+    outline: none;
+
+}
+
+textarea:focus,
+textarea:hover,
+textarea:active,
+textarea::selection {
+    color: rgb(0, 0, 0);
+    border: solid #E9003F !important;
+    border-width: 0 0 3px 0 !important;
+    padding-bottom: 2px;
+    outline: none;
+}
 //navbar
 .nav-item a{
     color: white;
