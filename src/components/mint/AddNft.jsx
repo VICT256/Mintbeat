@@ -18,7 +18,7 @@ export default function AddNft() {
         value="Purchasable"
         className="purchasable"
       />
-      <label for="purchasable"> Purchasable</label>
+      <label htmlFor="purchasable"> Purchasable</label>
       <br></br>
       <input
         type="text"
