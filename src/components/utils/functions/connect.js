@@ -48,9 +48,9 @@ export const ConnectToMetamask = async () => {
                 }
               }
 
-              window.ethereum.on('chainChanged', (chainId) => {
-                        window.location.reload();
-                      });
+              // window.ethereum.on('chainChanged', (chainId) => {
+              //           window.location.reload();
+              //         });
                             
               var ethbal = await window.ethereum.request({method: "eth_getBalance",params:[accounts[0]]})
               //  ethbal = await parseInt(ethbal);
