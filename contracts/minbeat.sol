@@ -87,7 +87,7 @@ contract MintBeat is ERC721URIStorage {
          uint currentIndex = 0;
          
          // loop to filter nft which are not currntly listed
-         for(uint256 i; i > nftCount; i++ ){
+         for(uint256 i; i < nftCount; i++ ){
              uint256 currentId = i + 1;
 
              ListedToken storage currentItem = idToListedToken[currentId];
@@ -103,7 +103,7 @@ contract MintBeat is ERC721URIStorage {
 
      }
 
-    function getMyNFTs() public returns(ListedToken[] memory){
+    function getMyNFTs() public view returns(ListedToken[] memory){
          uint256 totalItemCount = _tokenIds.current();
          uint256 itemCount = 0;
          uint currentIndex = 0;
@@ -133,7 +133,7 @@ contract MintBeat is ERC721URIStorage {
    
     function executeSale(uint256 tokenId) public payable {
       //verufy the price and the owner of the Nft 
-      uint price = idToListedToken[tokenId].price;
+      uint256 price = idToListedToken[tokenId].price;
       address seller = idToListedToken[tokenId].seller; 
       require(msg.value == price, "Price not Equal");
 
