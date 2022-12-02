@@ -4,9 +4,6 @@ import axios from "axios"
 const key= "514e8dc68f65650ab9d5"
 const secret="01ba6da564c298c62de39cfefec18af878b60ae059a8c4c2382a7e1b2028203c"
 
-// const key = REACT_APP_PRIV_KEY
-// const secret = REACT_APP_SECRET_KEY
-
 
  export const fileUpload = async(formData, name, price, description) => {
 
@@ -33,7 +30,7 @@ const secret="01ba6da564c298c62de39cfefec18af878b60ae059a8c4c2382a7e1b2028203c"
          }    
          
          const response =  await uploadJSONToIPFS(metadata)
-           return response;
+           return response.pinnataURL;
 
       }
        

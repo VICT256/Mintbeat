@@ -1,12 +1,15 @@
 // import React, { useState, useEffect } from "react";
+// import {ethers} from "ethers"
 // import NFTcard from "./NFTcard";
 // import styles from "./profile.css";
+// import abi from "../../../contractAbi.json"
 
-// const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS2;
-// const abi = process.env.REACT_APP_CONTRACT_ABI;
+// const contractAddress = "0xa151cfaD321b4feB4e04ddE4cA33E4D98ADf8DC5"
+// const provider = new ethers.providers.Web3Provider(window.ethereum);
+// const signer = provider.getSigner();
+// const wallet = await signer.getAddress();
 
 // export default function Dashboard() {
-//   // const [wallet , setWalletAddress] = useState("");
 //   const [NFT, setNFT] = useState([]);
 //   const [loading, setLoading] = useState(false);
 
@@ -15,24 +18,14 @@
 //     let nfts;
 
 //     try {
-//       const ethers = require("ethers");
+     
 //       let sumPrice = 0;
 
-//       //After adding your Hardhat network to your metamask, this code will get providers and signers
-//       const provider = new ethers.providers.Web3Provider(window.ethereum);
-//       const signer = provider.getSigner();
-//       const addr = await signer.getAddress();
-
-//       //Pull the deployed contract instance
 //       let contract = new ethers.Contract(contractAddress, abi, signer)
 
 //       //create an NFT Token
 //       let transaction = await contract.getMyNFTs()
 
-//       /*
-//       * Below function takes the metadata from tokenURI and the data returned by getMyNFTs() contract function
-//       * and creates an object of information that is to be displayed
-//       */
       
 //       const items = await Promise.all(transaction.map(async i => {
 //           const tokenURI = await contract.tokenURI(i.tokenId);
@@ -55,7 +48,7 @@
 
 //       updateData(items);
 //       updateFetched(true);
-//       updateAddress(addr);
+//       updateAddress(wallet);
 //       updateTotalPrice(sumPrice.toPrecision(3));
 //   }
 

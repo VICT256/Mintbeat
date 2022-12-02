@@ -9,13 +9,13 @@ const hre = require("hardhat");
 
 async function main() {
  
-  const Lock = await hre.ethers.getContractFactory("Mintbeat");
-  const lock = await Lock.deploy();
+  const Mintbeat = await hre.ethers.getContractFactory("Mintbeat");
+  const mintbeat = await Lock.deploy();
 
-  await lock.deployed();
+  await mintbeat.deployed();
 
   console.log(
-    `MintBeat contract deployed to: ${lock.address}`
+    `MintBeat contract deployed to: ${mintbeat.address}`
   );
 }
 // async function main() {
@@ -37,7 +37,11 @@ async function main() {
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main().catch((error) => {
+main()
+.then(()=> {
+  process.exit(0)
+})
+.catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });

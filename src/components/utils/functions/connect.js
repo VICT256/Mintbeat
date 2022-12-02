@@ -57,7 +57,7 @@ export const ConnectToMetamask = async () => {
               //  ethbal = ethbal / Math.pow(10, 18)
                ethbal = ethers.utils.formatEther(ethbal)
                const data = {address: accounts[0],
-                 walletBalance: ethbal,
+                 balance: ethbal,
                   status: "connected"}
                 return data;
            }catch(err){

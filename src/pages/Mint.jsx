@@ -1,5 +1,5 @@
 import React from 'react'
-import NftInformation from '../components/mint/NftInform'
+import NftInformation from '../components/mint/NftInfor'
 // import AddNft from '../components/mint/AddNft';
 function Mint() {
   return (
