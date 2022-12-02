@@ -12,7 +12,7 @@ input:focus,
 input:hover,
 input:active,
 input::selection {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255) !important;
     border: solid #E9003F !important;
     border-width: 0 0 3px 0 !important;
     padding-bottom: 2px;
@@ -24,7 +24,7 @@ textarea:focus,
 textarea:hover,
 textarea:active,
 textarea::selection {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255) !important;
     border: solid #E9003F !important;
     border-width: 0 0 3px 0 !important;
     padding-bottom: 2px;
@@ -363,6 +363,8 @@ font-size: 0.8em;
 }
 
 input[type=text], select {
+      color: rgb(255, 255, 255);
+
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -405,6 +407,8 @@ textarea{
 }
 
 input[type=text]:focus {
+      color: rgb(255, 255, 255);
+
   border: 1px solid rgb(142, 34, 34);
 }
 

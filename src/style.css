@@ -17,7 +17,7 @@ body {
 }
 
 input::-moz-selection {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255) !important;
   border: solid #E9003F !important;
   border-width: 0 0 3px 0 !important;
   padding-bottom: 2px;
@@ -28,7 +28,7 @@ input:focus,
 input:hover,
 input:active,
 input::selection {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255) !important;
   border: solid #E9003F !important;
   border-width: 0 0 3px 0 !important;
   padding-bottom: 2px;
@@ -36,7 +36,7 @@ input::selection {
 }
 
 textarea::-moz-selection {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255) !important;
   border: solid #E9003F !important;
   border-width: 0 0 3px 0 !important;
   padding-bottom: 2px;
@@ -47,7 +47,7 @@ textarea:focus,
 textarea:hover,
 textarea:active,
 textarea::selection {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255) !important;
   border: solid #E9003F !important;
   border-width: 0 0 3px 0 !important;
   padding-bottom: 2px;
@@ -211,7 +211,9 @@ textarea::selection {
 }
 
 .navbar {
-  padding: 2em 0;
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+  height: 80px;
+  padding: 3em 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -316,9 +318,8 @@ textarea::selection {
     transform: translate(25%, 50%);
   }
   .menu-icon {
-    display: flex;
+    display: block;
     position: absolute;
-    gap: 1rem;
     top: 0;
     right: 0;
     transform: translate(-100%, 60%);
@@ -388,6 +389,7 @@ textarea::selection {
 }
 
 input[type=text], select {
+  color: rgb(255, 255, 255);
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -434,6 +436,7 @@ textarea {
 }
 
 input[type=text]:focus {
+  color: rgb(255, 255, 255);
   border: 1px solid rgb(142, 34, 34);
 }
 
