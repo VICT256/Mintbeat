@@ -1,10 +1,8 @@
 import axios from "axios"
 import {ethers} from ethers
-import abi from "../../../../contractAbi.json"
-// const ethers = require("ethers");
 
+const abi = require("../../../contractAbi.json")
 const contractAddress = "0x0CeC8188C8b1896E1E3843fEF092B2CB26e9783B"
-
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner();
 

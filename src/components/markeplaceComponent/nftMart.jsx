@@ -2,8 +2,8 @@ import React from 'react'
 import {ethers} from "ethers"
 
 const ethers = require("ethers");
-
-
+const abi = require("../../contractAbi.json")
+const contractAddress = "0x0CeC8188C8b1896E1E3843fEF092B2CB26e9783B"
 
 async function getAllNFTs() {
    
@@ -11,7 +11,7 @@ async function getAllNFTs() {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     //Pull the deployed contract instance
-    let contract = new ethers.Contract(MarketplaceJSON.address, MarketplaceJSON.abi, signer)
+    let contract = new ethers.Contract(contractAddress, abi, signer)
     //create an NFT Token
     let transaction = await contract.getAllNFTs()
 

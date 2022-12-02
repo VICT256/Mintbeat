@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { fileUpload } from '../utils/functions/pinata';
 import { FileUploader } from "react-drag-drop-files";
 import {ethers} from "ethers"
-import { getConnection } from '../function';
+import { ConnectToMetamask } from '../utils/functions/connect';
 
 const abi = require("../../contractAbi.json")
 
@@ -53,11 +53,11 @@ export default function NftInformation() {
         try {
 
           const metadataURL = await fileUpload(formData,name,category, description )
-
+           console.log(metadataURL)
              if (metadataURL){
                
               try {
-                   await getConnection ()
+                   await ConnectToMetamask ()
                   
                   const provider = new ethers.providers.Web3Provider(window.ethereum);
                   const signer = provider.getSigner();
@@ -154,10 +154,8 @@ export default function NftInformation() {
           />
           <br />
           <button onClick ={MintNFT} className="submit_nft_btn">Mint</button>{" "}
-    </div>
+      </div>
        
-         
-
     </div>
     </>
    
