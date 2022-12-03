@@ -20,7 +20,7 @@ const music = [
 	},
 ];
 
-const recentlyPlayed = [
+export const recentlyPlayed = [
 	{
 		artist: 'Maroon 5',
 		music: 'Memories',
