@@ -83,11 +83,6 @@
 				"internalType": "uint256",
 				"name": "price",
 				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "category",
-				"type": "string"
 			}
 		],
 		"name": "createToken",
@@ -112,51 +107,6 @@
 		"name": "executeSale",
 		"outputs": [],
 		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getMyNFTs",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "uint256",
-						"name": "tokenId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "seller",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "price",
-						"type": "uint256"
-					},
-					{
-						"internalType": "bool",
-						"name": "currentlyListed",
-						"type": "bool"
-					},
-					{
-						"internalType": "string",
-						"name": "category",
-						"type": "string"
-					}
-				],
-				"internalType": "struct MintBeat.ListedToken[]",
-				"name": "",
-				"type": "tuple[]"
-			}
-		],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -285,12 +235,6 @@
 				"internalType": "bool",
 				"name": "currentlyListed",
 				"type": "bool"
-			},
-			{
-				"indexed": false,
-				"internalType": "string",
-				"name": "category",
-				"type": "string"
 			}
 		],
 		"name": "tokenListedSuccess",
@@ -363,12 +307,12 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "address",
+						"internalType": "address payable",
 						"name": "owner",
 						"type": "address"
 					},
 					{
-						"internalType": "address",
+						"internalType": "address payable",
 						"name": "seller",
 						"type": "address"
 					},
@@ -381,14 +325,9 @@
 						"internalType": "bool",
 						"name": "currentlyListed",
 						"type": "bool"
-					},
-					{
-						"internalType": "string",
-						"name": "category",
-						"type": "string"
 					}
 				],
-				"internalType": "struct MintBeat.ListedToken[]",
+				"internalType": "struct MintBeatPoly.ListedToken[]",
 				"name": "",
 				"type": "tuple[]"
 			}
@@ -440,12 +379,12 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "address",
+						"internalType": "address payable",
 						"name": "owner",
 						"type": "address"
 					},
 					{
-						"internalType": "address",
+						"internalType": "address payable",
 						"name": "seller",
 						"type": "address"
 					},
@@ -458,14 +397,9 @@
 						"internalType": "bool",
 						"name": "currentlyListed",
 						"type": "bool"
-					},
-					{
-						"internalType": "string",
-						"name": "category",
-						"type": "string"
 					}
 				],
-				"internalType": "struct MintBeat.ListedToken",
+				"internalType": "struct MintBeatPoly.ListedToken",
 				"name": "",
 				"type": "tuple"
 			}
@@ -491,12 +425,12 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "address",
+						"internalType": "address payable",
 						"name": "owner",
 						"type": "address"
 					},
 					{
-						"internalType": "address",
+						"internalType": "address payable",
 						"name": "seller",
 						"type": "address"
 					},
@@ -509,14 +443,9 @@
 						"internalType": "bool",
 						"name": "currentlyListed",
 						"type": "bool"
-					},
-					{
-						"internalType": "string",
-						"name": "category",
-						"type": "string"
 					}
 				],
-				"internalType": "struct MintBeat.ListedToken",
+				"internalType": "struct MintBeatPoly.ListedToken",
 				"name": "",
 				"type": "tuple"
 			}
@@ -532,6 +461,46 @@
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getMyNFTs",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "currentlyListed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct MintBeatPoly.ListedToken[]",
+				"name": "",
+				"type": "tuple[]"
 			}
 		],
 		"stateMutability": "view",

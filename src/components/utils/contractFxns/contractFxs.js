@@ -32,6 +32,7 @@ async function getNFTData(tokenId) {
 }
 
 async function buyNFT(tokenId) {
+    
     try {
         const ethers = require("ethers");
         //After adding your Hardhat network to your metamask, this code will get providers and signers

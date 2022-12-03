@@ -3,78 +3,79 @@ import { fileUpload } from '../utils/functions/pinata';
 import { FileUploader } from "react-drag-drop-files";
 import {ethers} from "ethers"
 import { ConnectToMetamask } from '../utils/functions/connect';
-
-const abi = require("../../contractAbi.json")
+import abi from "../../contractAbi.json"
 
 const FormData = require("form-data");
 
 const fileTypes = ["JPG", "PNG", "GIF", "WAV"];
-const contractAddress = "0xa151cfaD321b4feB4e04ddE4cA33E4D98ADf8DC5"
-
-
+var contractAddress = "0x1d0D0cd9Be01fE529896e61FaE08a1662D368A6D"   // for testing
 
 export default function NftInformation() {
-
-      const [name, setName]= useState('')
-      const [description, setDescription] = useState("");
-      const [status, setStatus] = useState("")  
-      const [category, setCategory] = useState("")
-      const [price, setPrice] = useState("")     
-      const [selectedFile, setSelectedFile] = useState();
-      const [title, setTitle] = useState("");
-    
-    const changeHandler = (file) => {
-        // setSelectedFile(event.target.files[0]);
-        // setTitle(event.target.files[0].name);
-        setSelectedFile(file);
-        // setTitle(file.name);
-      }; 
- 
-    const MintNFT = async () => {
-      if( !name || !description || !price || !selectedFile || !title ){
-            alert("Incomplete Field")
-        return;
-      }
-        
-        const formData = new FormData();
+        const [wallet, setWallet] = useState("")
+        const [name, setName]= useState('')
+        const [description, setDescription] = useState("");
+        const [status, setStatus] = useState("")  
+        const [category, setCategory] = useState("")
+        const [price, setPrice] = useState("")     
+        const [selectedFile, setSelectedFile] = useState();
+        const [title, setTitle] = useState("");
       
-        formData.append('file', selectedFile)
-    
-        const metadata = JSON.stringify({
-          name: name,
-        });
-        formData.append('pinataMetadata', metadata);
+      const changeHandler = (file) => {
+
+          setSelectedFile(file);
+        }; 
+ 
+      const MintNFT = async () => {
+        if( !name || !description || !price || !selectedFile || !title ){
+              alert("Incomplete Field")
+          return;
+        }  
+
+            const formData = new FormData();
+          
+            formData.append('file', selectedFile)
         
-        const options = JSON.stringify({
-          cidVersion: 0,
-        })
-        formData.append('pinataOptions', options);
+            const metadata = JSON.stringify({
+              name: category,
+            });
+            formData.append('pinataMetadata', metadata);
+            
+            const options = JSON.stringify({
+              cidVersion: 0,
+            })
+            formData.append('pinataOptions', options);
 
         try {
 
-          const metadataURL = await fileUpload(formData,name,category, description )
-           console.log(metadataURL)
-             if (metadataURL){
+          const res = await fileUpload(formData,name,title, description )
+          
+             if (res.success === true){
                
               try {
-                   await ConnectToMetamask ()
-                  
+                    await ConnectToMetamask()
+                   
+                  var metadataURL = res.pinnataURL
+                  console.log(metadataURL)
                   const provider = new ethers.providers.Web3Provider(window.ethereum);
                   const signer = provider.getSigner();
-      
-                  //Pull the deployed contract instance
-                  let contract = new ethers.Contract(contractAddress, abi , signer)
-      
-                  //massage the params to be sent to the create NFT request
-                   ethers.utils.parseUnits(price, 'ether')
+                    
+                  // Contract call
+                  let contract = new ethers.Contract(contractAddress, abi, signer)
+                   ethers.utils.parseEther(price)
+
                   let listingPrice = await contract.getListPrice()
-                  listingPrice = listingPrice.toString()
-      
+                    listingPrice = listingPrice.toString()
                   //actually create the NFT
-                  let transaction = await contract.createToken(metadataURL, price,title, { value: listingPrice })
+                 let tip ={value: ethers.utils.parseEther('0.5')}
+
+                //  var url1 = "https://gateway.pinata.cloud/ipfs/QmcZKH8Vu5D8CAkANQg5ocHmFsmzDqVQXh2efM6NRcCgoQ"
+                 //var url2 = https://gateway.pinata.cloud/ipfs/QmUSGVFeHLcEp6EFuLT1CSbHGQgRkrdMxciAPghA7nvhyM
+                // var url3 https://gateway.pinata.cloud/ipfs/QmdCRNUsGERLXBy4mdhQajqVBaR45dCPGP2ihymokWWGkh
+                let transaction = await contract.createToken(metadataURL, price, tip)
+               
                   await transaction.wait()
-                  setStatus(" NFT Minted Successfully")
-                  alert(status) 
+                  // setStatus("NFT Minted Successfully")
+                  alert("transaction Succesful") 
 
                   window.location.replace("/profile")
 

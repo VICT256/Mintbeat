@@ -1,11 +1,12 @@
 import React from 'react'
+import MarketPlaceComponent from '../components/markeplaceComponent/nftMart';
 
 
 function Marketplace() {
 
     return ( 
-        <div>
-          
+        <div className=''>
+            <MarketPlaceComponent />
         </div>
      );
 }

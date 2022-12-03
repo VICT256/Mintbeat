@@ -6,7 +6,7 @@ import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-contract MintBeat is ERC721URIStorage {
+contract MintBeatPoly is ERC721URIStorage {
 
     using Counters for Counters.Counter;
     // keep track of the tokenId;
@@ -20,11 +20,11 @@ contract MintBeat is ERC721URIStorage {
 
     struct ListedToken {
         uint256 tokenId;
-        address owner;
-        address seller;
+        address payable owner;
+        address payable seller;
         uint256 price;
         bool currentlyListed;
-        string title;
+        
 
     }
    //event emitted when a token is listed
@@ -33,9 +33,7 @@ contract MintBeat is ERC721URIStorage {
          uint256 price,
           address owner,
           address seller, 
-          bool currentlyListed,
-          string title
-          
+          bool currentlyListed 
           );
 
     mapping(uint256 => ListedToken) idToListedToken;
@@ -44,7 +42,7 @@ contract MintBeat is ERC721URIStorage {
        owner = payable(msg.sender);
      }
 
-     function createToken (string memory tokenURI, uint256 price,string memory title) payable public returns(uint256){
+     function createToken (string memory tokenURI, uint256 price ) payable public returns(uint256){
        // increment the Tokenid
        _tokenIds.increment();
        // get the current tokenid;
@@ -56,26 +54,24 @@ contract MintBeat is ERC721URIStorage {
        _setTokenURI(newTokenId, tokenURI);
        
        // run a helper funtion to help us keep track;
-       createListedToken(newTokenId, price, title);
+       createListedToken(newTokenId, price);
 
        return newTokenId;
 
 
      }
 
-     function createListedToken(uint256 tokenId, uint256 price, string memory title) private {
+     function createListedToken(uint256 tokenId, uint256 price ) private {
          // ensure the artiste pay for the minting
         require(msg.value > listPrice, "Minting Service Fees require");
         // check that the price is greater than zero;
         require ( price > 0, " Price must exceed o ether");
 
-        idToListedToken[tokenId] = ListedToken(tokenId, payable(address(this)), payable(msg.sender), price, true, title);
+        idToListedToken[tokenId] = ListedToken(tokenId, payable(address(this)), payable(msg.sender), price, true );
         
-        _transfer(address(this), msg.sender, tokenId);
-
-        // emit event
-        emit tokenListedSuccess(tokenId,price, address(this), msg.sender, true, title);
-
+        _transfer(msg.sender, address(this),  tokenId);
+         // emit event
+        emit tokenListedSuccess(tokenId,price, address(this), msg.sender, true );
 
      }
 

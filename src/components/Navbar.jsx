@@ -66,7 +66,7 @@ export default function NavBar() {
 							</li>
 
 							<li className="nav-item">
-								<Link className="nav-link" to="/Browse">
+								<Link className="nav-link" to="/marketplace">
 									Browse
 								</Link>
 							</li>

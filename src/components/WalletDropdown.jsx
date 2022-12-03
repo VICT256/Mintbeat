@@ -1,14 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {ethers} from "ethers"
 import { ConnectToMetamask } from './utils/functions/connect';
 
 const WalletDropdown = () => {
-         const [walletAddress, setWalletAddress] = React.useState('')
-         const[walletBalance, setbalance] = React.useState("")
-		 const [ethervalue, setEtherValue]= React.useState("")
+         const [walletAddress, setWalletAddress] =useState('')
+         const[walletBalance, setbalance] = useState("")
+		 const [ethervalue, setEtherValue]= useState("")
 
 		 async function set(){
-
 			const {address, balance } = await ConnectToMetamask()
 			setWalletAddress(address)
             setEtherValue ( ethers.utils.parseUnits(balance, 'ether'))
@@ -16,9 +15,8 @@ const WalletDropdown = () => {
 			console.log(ethervalue)
 		 }
 
-	React.useEffect(()=>{
-		set()
-	},[walletAddress])
+ useEffect(()=>{
+		set()},[walletAddress])
 
 	return (
 		<div className="bg-[#000] w-[270px] rounded-lg absolute right-[10%] top-[80px] z-10 text-white py-5 px-8 flex flex-col text-sm">
