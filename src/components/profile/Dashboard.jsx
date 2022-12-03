@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"
 import {ethers} from "ethers"
-import {ConnectToMetamask} from "../utils/functions/connect"
+import {ConnectToMetamask,getWalletConnected} from "../utils/functions/connect"
 import NFTcard from "./NFTcard";
 import styles from "./profile.css";
 import abi from "../../contractAbi.json"
@@ -24,7 +24,8 @@ export default function Dashboard() {
                     let contract = new ethers.Contract(contractAddress, abi, signer)
 
                     //create an NFT Token
-                    await ConnectToMetamask()
+                    // await ConnectToMetamask()
+                    await getWalletConnected ()
                     let transaction = await contract.getMyNFTs()
                     console.log(transaction)
                 

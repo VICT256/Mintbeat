@@ -84,10 +84,10 @@ export default function NavBar() {
 								<img src={ProfileImage} alt="" className="profile_nft_image" />
 							</li>
 							<li className="nav-item ">
-								<a className="nav-link " href="/">
-									Anna Maria M
+								<a className="nav-link " href="/profile">
+									Profile
 								</a>
-							</li>{' '}
+							</li>{}
 							<img
 								src="data:image /png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAEK0lEQVRoge2ZXWxURRTHf7NtRRtIUPSBtCRGozQxMSbFjweIthiVoKQhsXzVAoJE24LG+BmrbJVWkJCoSysxVqIULLURDTZgoEutDyYE3kHjCxZM1OXFplrs7vFhqqX3zt47s3e3mND/093zNf+zZ3bnzLkwjWlc3VD5CCI8XgQX7wGqQCpBVYCaCzJzfJlhkAsgZ0GdAnUCFp5UxDNR146UgPDQPMg0gtQBZY7uQyBdkGlXDAzlyiGnBIQlN8GlbcA64JpcFx/HJZBOUK8r+lOuzs4JCA+uBkkAN7j6hiAFNCr6D7o4WScgVJbA7A5goyszN6g9MLZZMTBmZW1jJDxWCiO9wJJI3OzRB6W1isMjYYahCYx/818xdeT/RR+ka8IqEQuPM7uDqScPsBRi74cZBVZAWLwG6MobpZygViiO92TVZlMIi+cAZ4AbC0HLASlIVygGfjcpg7ZQG1eePMAcKIpnUxorIDxQDkU/Ef2QyhdGQW5VJM97FVkqUNzE/4c8wAxQjSaFLwEhHgNZU3hOzqjXTeNkGCrw3b1A+RQQckUZpCq9QtMWqrIOGa+H7RE6C2f/WLVXUmywWmC9+NZ6/TyrFJoSIGLPpWUtvPHExOdXPrJwEqsK3B4a53LyAA3LYM9zELPsDd9aP5n8yyttKzHfKzAlMDcwRFEM7rjZL9+0FDpf0PogvLMJmg3/EbeVh/sauJk8ZgaGSGdg5Tb49Jhft+5hOPAalJh2JtC2AV6s9ct7B3XMdOgNc5ZXYNHMGZDOwJM7Ye9Rv672fvgiDtdedowoBe82wKur/Pa9g7C6Df62av99MCUwbOWZzsCGXbD7S7/u0fvgUAtcN2OC/LPL/XaffwurWl3I/+EVmGr9C7bXRRHY0q6fm2om6x65G/pa4cfz+vfhxYEk1G+32TZebpNgqICcdYmICGzeDa37/bqqu8zkDw7A2h2u5AF1xisxJKBOO0bVaN4Lb+4Lt+s+AXVvw1g6h0UyPm6mBJI5RNbY+knwgfRZMgJ5MHEzJLDwJPBzjivAjm546UO//OOjmrzztvkP52BReAX0uE8MG9oBO3ug4b2J1qLzCDy1CzIOrYYfXaZRZGEvNA3L4M5bdDLRyGe90ATcias7QD0TZdX8QRKK5BaTJuAkLmkG+a1QlByQAtWSTZk1AcU3F0EZs55iPB009A3shRT93XpWeaUgCUV/b5CFRTN3fRNwKE+MXPA1ZJ4PM3IZ7vYAhr6gIDgMIysU3/8ZZmjVTuspcboG5IPo3MIgCUgvtyEPub3gqAVpJ/9Tu1/RLzgC97wXzhcaPWgtng+0A6Ou/gb8pb/10QpX8ppPBAjVZeMTszpgnqP7OVD7QHUojl3IlUOeXrPGYzC4QM9tpBI9PShj4n49DAwBP4Cc0l3lotP5eM06jWlc7fgHv/wk+T6s7hoAAAAASUVORK5CYII="
 								className="arrow_buttom nav-item "
@@ -99,7 +99,7 @@ export default function NavBar() {
 						<ul className="navbar-nav ">
 							<li className="nav-item nav_wallet">
 								<div onClick={handleConnect} className="cursor-pointer">
-									<FaWallet style={{ color: 'white', fontSize: '30px' }} />
+									<FaWallet style={{ color: 'white', fontSize: '30px', position:"relative", float: "right" }} />
 								</div>
 							</li>
 						</ul>

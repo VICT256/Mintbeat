@@ -134,7 +134,8 @@ export default function NftInformation() {
           <FileUploader handleChange={changeHandler}   name="file" types={fileTypes} />
           {/* <input onChange={changeHandler} type={"file"}/> */}
 
-          <label for="purchasable"> Royalty Fees percentage</label>
+          <label style={{color:"gray"}} for="purchasable"> * Upload should not exceed 1GB filesize *</label>
+          <br></br>
           {/* <input
             onChange={e => setRoyalty(e.target.value)}
             type="text"
