@@ -17,7 +17,7 @@ function MarketNFTCard(nft) {
 					</p>
 					<div className="flex items-center justify-between mt-5">
 						<p>{nft.tokenID}</p>
-						<button className="btn-primary bg-[#E9003F] px-3 py-2">
+						<button className="btn-primary bg-[#E9003F] px-3 py-2 hover:bg-[#e9003f]">
 							<span>Buy </span>
 							<span className="text-[#FFF]">{data.initial_price_set}</span>
 						</button>
