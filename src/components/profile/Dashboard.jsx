@@ -3,7 +3,6 @@ import axios from "axios"
 import {ethers} from "ethers"
 import {ConnectToMetamask,getWalletConnected} from "../utils/functions/connect"
 import NFTcard from "./NFTcard";
-import styles from "./profile.css";
 import abi from "../../contractAbi.json"
 
 const contractAddress = "0x07CfE3773b86d15deC743BB7f37d498dF0562F51"
@@ -13,6 +12,7 @@ export default function Dashboard() {
         
         const [NFTs, setNFTFetched] = useState([]);
         const [loading, setLoading] = useState(false);
+        const [numberOfNfts, setNumber] = useState("")
 
         const fetchNFTs = async () => {
             setLoading(true);
@@ -53,6 +53,7 @@ export default function Dashboard() {
                   }
 
                 setNFTFetched(item)
+                setNumber(item.length)
                 setLoading(false)
               }
             catch (err){
@@ -65,7 +66,8 @@ export default function Dashboard() {
     fetchNFTs()
 })
    return (
-          <div className={styles.card}>
+          <div style={{display: "flex"}} className={""}>
+            <h3>no of collection : {numberOfNfts}</h3>
             {loading? "Loading....": NFTs?.map((nft, index) => { <NFTcard key={index} nft ={nft}/>})}
             {/* {NFTs.length > 0 &&  NFTs.map((nft, index)=> <NFTcard key={index} nft={nft} />)} */}
             <button onClick={fetchNFTs}> Fetch NFT</button>
