@@ -15,29 +15,26 @@ export default function MarketPlaceComponent() {
 	const [loading, setLoading] = useState(false);
 
 	async function handleArray(allnfts) {
-		for (let nft of allnfts) {
-			const tokenURI = await contract.tokenURI(nft.tokenId);
-			let meta = await axios.get(tokenURI);
-			meta = meta.data;
-			console.log('hey');
+        for (let nft of allnfts) {
+              const tokenURI = await contract.tokenURI(nft.tokenId);
+              let meta = await axios.get(tokenURI);
+              meta = meta.data;
+              console.log('hey');
 
-			let price = ethers.utils.formatUnits(nft.price.toString(), 'ether');
-			let item = {
-				name: meta.name,
-				title: meta.title,
-				description: meta.description,
-				image: meta.url,
-				price: price,
-				tokenId: nft.tokenId.toNumber(),
-				seller: nft.seller,
-				owner: nft.owner,
-			};
-			return item;
-		}
+              let price = ethers.utils.formatUnits(nft.price.toString(), 'ether');
+              let item = {
+                name: meta.name,
+                title: meta.title,
+                description: meta.description,
+                image: meta.url,
+                price: price,
+                tokenId: nft.tokenId.toNumber(),
+                seller: nft.seller,
+                owner: nft.owner,
+          };
+          return item;
+        }
 	}
-
-     
-  }
 
 	const fetchAllNFTs = async () => {
                 setLoading(true);
@@ -118,3 +115,4 @@ export default function MarketPlaceComponent() {
 		</div>
 	);
 }
+
