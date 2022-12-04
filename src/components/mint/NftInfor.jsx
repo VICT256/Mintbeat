@@ -8,10 +8,10 @@ import abi from "../../contractAbi.json"
 const FormData = require("form-data");
 
 const fileTypes = ["JPG", "PNG", "GIF", "WAV"];
-var contractAddress = "0x1d0D0cd9Be01fE529896e61FaE08a1662D368A6D"   // for testing
+var contractAddress = "0x07CfE3773b86d15deC743BB7f37d498dF0562F51"  
 
 export default function NftInformation() {
-        const [wallet, setWallet] = useState("")
+        const [royalty, setRoyalty] = useState("")
         const [name, setName]= useState('')
         const [description, setDescription] = useState("");
         const [status, setStatus] = useState("")  
@@ -69,8 +69,8 @@ export default function NftInformation() {
                  let tip ={value: ethers.utils.parseEther('0.5')}
 
                 //  var url1 = "https://gateway.pinata.cloud/ipfs/QmcZKH8Vu5D8CAkANQg5ocHmFsmzDqVQXh2efM6NRcCgoQ"
-                 //var url2 = https://gateway.pinata.cloud/ipfs/QmUSGVFeHLcEp6EFuLT1CSbHGQgRkrdMxciAPghA7nvhyM
-                // var url3 https://gateway.pinata.cloud/ipfs/QmdCRNUsGERLXBy4mdhQajqVBaR45dCPGP2ihymokWWGkh
+                //  var url2 = "https://gateway.pinata.cloud/ipfs/QmUSGVFeHLcEp6EFuLT1CSbHGQgRkrdMxciAPghA7nvhyM"
+                // var url3= "https://gateway.pinata.cloud/ipfs/QmdCRNUsGERLXBy4mdhQajqVBaR45dCPGP2ihymokWWGkh"
                 let transaction = await contract.createToken(metadataURL, price, tip)
                
                   await transaction.wait()
@@ -132,18 +132,17 @@ export default function NftInformation() {
        <div className="col50 add_music_nft">
           <header style={{color:"white", marginTop: 20}}>Add Music file</header>
           <FileUploader handleChange={changeHandler}   name="file" types={fileTypes} />
-          {/* <input onChange={changeHandler} type={"file"}/> */}
 
           <label style={{color:"gray"}} for="purchasable"> * Upload should not exceed 1GB filesize *</label>
           <br></br>
-          {/* <input
+          <input
             onChange={e => setRoyalty(e.target.value)}
             type="text"
             id="royalty"
             name="royalty"
             value="royalty"
             className="royalty"
-          /> */}
+          />
          
           <br></br>
           <input

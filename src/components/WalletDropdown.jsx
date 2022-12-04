@@ -1,19 +1,25 @@
 import React, {useEffect, useState} from 'react';
-import {ethers} from "ethers"
+import axios from "axios"
 import { ConnectToMetamask } from './utils/functions/connect';
 
 const WalletDropdown = () => {
          const [walletAddress, setWalletAddress] =useState('')
          const[walletBalance, setbalance] = useState("")
 		 const [ethervalue, setEtherValue]= useState("")
+		 const [price, setPrice] = useState('')
 
 		 async function set(){
 			const {address, balance } = await ConnectToMetamask()
 			setWalletAddress(address)
-            setEtherValue ( ethers.utils.parseUnits(balance, 'ether'))
+            // setEtherValue ( ethers.utils.parseUnits(balance, 'ether'))
 			setbalance(Number(balance).toFixed(3))
+
+			 var maticprice = await axios.get("https://api.binance.com/api/v3/ticker/price")
+			 setPrice(maticprice.data[499].price)
 			console.log(ethervalue)
 		 }
+
+		 function swap() {alert("Unable to connect Uniswap")}
 
  useEffect(()=>{
 		set()},[walletAddress])
@@ -24,12 +30,12 @@ const WalletDropdown = () => {
 				<p>{walletAddress.length > 0 ? ("Connected: " + String(walletAddress).substring(0, 6) +"..." +String(walletAddress).substring(38)) : ( <span>Connect Wallet</span>)}</p>
 				<br></br>
 				<br></br>
-				<p>Total Balance:  {walletBalance}</p>
+				<p>Total Balance:  {`$${walletBalance * price}`}</p>
 			</div>
 
 			<div className="grid grid-cols-2 gap-5 w-full">
 				<p>
-					{/* <img src="" alt="" />{ethervalue} */}
+					<img src="https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png"  style={{marginRight:20}} height={30} width={30} alt="" />{`${walletBalance} MATIC`}
 				</p>
 				<p>
 					{/* <img src="" alt="" />{ethervalue} */}
@@ -38,8 +44,8 @@ const WalletDropdown = () => {
 			</div>
 
 			<div className="flex items-center justify-between mt-8 w-full">
-				<button className="btn-primary bg-[#141414] text-xs px-3 py-2 hover:bg-[#141414]">Buy Matic</button>
-				<button className="btn-primary bg-[#E9003F] hover:bg-[#E9003F] text-xs text-white px-5 py-2">Swap</button>
+				<a href='https://faucet.polygon.technology/' target={"_blank"}><button className="btn-primary bg-[#141414] text-xs px-3 py-2 hover:bg-[#141414]">Receive tokens</button></a>
+				<button onClick={swap} className="btn-primary bg-[#E9003F] hover:bg-[#E9003F] text-xs text-white px-5 py-2">Swap</button>
 			</div>
 		</div>
 	);

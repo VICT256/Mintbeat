@@ -6,7 +6,7 @@ import NFTcard from "./NFTcard";
 import styles from "./profile.css";
 import abi from "../../contractAbi.json"
 
-const contractAddress = "0x1d0D0cd9Be01fE529896e61FaE08a1662D368A6D"
+const contractAddress = "0x07CfE3773b86d15deC743BB7f37d498dF0562F51"
 
 
 export default function Dashboard() {
@@ -26,29 +26,33 @@ export default function Dashboard() {
                     //create an NFT Token
                     // await ConnectToMetamask()
                     await getWalletConnected ()
-                    let transaction = await contract.getMyNFTs()
-                    console.log(transaction)
-                
-                    const items = await Promise.all(transaction.map(async i => {
-                    const tokenURI = await contract.tokenURI(i.tokenId)
-                    let meta = await axios.get(tokenURI);
-                    meta = meta.data;
+                    let mynfts = await contract.getMyNFTs()
+                    console.log(mynfts)
+                    let item;
+                 
+                  for (let nft of mynfts ){
 
-                    let price = ethers.utils.formatUnits(i.price.toString(), 'ether');
+                    const tokenURI = await contract.tokenURI(nft.tokenId);
+                    let meta = await axios.get(tokenURI)
+                        meta = meta.data;
+                              console.log("hey")
+                   
+                    let price = ethers.utils.formatUnits(nft.price.toString(), 'ether')
                     let item = {
-                        name: meta.name,
-                        title: meta.title,
-                        description: meta.description,
-                        image: meta.url,
-                        price: price,
-                        tokenId: i.tokenId.toNumber(),
-                        seller: i.seller,
-                        owner: i.owner,
-                    }
-                     return item;
-                }));
+                            name: meta.name,
+                            title: meta.title,
+                            description: meta.description,
+                            image: meta.url,
+                            price: price,
+                            tokenId: nft.tokenId.toNumber(),
+                            seller: nft.seller,
+                            owner: nft.owner,
+                          };
+                      console.log(item)		
+                    return item;
+                  }
 
-                setNFTFetched(items)
+                setNFTFetched(item)
                 setLoading(false)
               }
             catch (err){

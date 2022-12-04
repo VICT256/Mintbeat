@@ -23,14 +23,14 @@ const secret="01ba6da564c298c62de39cfefec18af878b60ae059a8c4c2382a7e1b2028203c"
          var imageURL = pinataURL+res.data.IpfsHash
 
          const metadata = {
-            name_of_artiste : name,
-            description : description,
+            name : name,
             title: title,
-            url : imageURL
+            description : description,
+            image : imageURL,
          }    
          
          const response =  await uploadJSONToIPFS(metadata)
-         console.log(response)
+        //  console.log(response)
            return {
             success:response.success,
             pinnataURL:response.pinnataURL

@@ -6,11 +6,13 @@ require("dotenv").config();
 module.exports = {
   solidity: "0.8.17",
   networks : {
-    goerli:{
+    mumbai:{
       url: process.env.REACT_APP_NODE_URL,
       accounts: [process.env.REACT_APP_PRIV_KEY],
-      chainId: 5,
     }
+  },
+  etherscan : {
+    apiKey :  process.env.REACT_APP_POLYGON_API_KEY,
   }
 }
 

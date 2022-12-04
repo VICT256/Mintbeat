@@ -104,7 +104,7 @@ contract MintBeatPoly is ERC721URIStorage {
          uint256 itemCount = 0;
          uint currentIndex = 0;
 
-         for(uint256 i; i < totalItemCount; i++) {
+         for(uint i; i < totalItemCount; i++) {
              if (idToListedToken[i+1].owner == msg.sender || idToListedToken[i+1].seller == msg.sender){
                  itemCount += 1;
              }
@@ -120,11 +120,10 @@ contract MintBeatPoly is ERC721URIStorage {
                    ownedNfts[currentIndex] = item;
                    currentIndex += 1;
 
-              }
-              return ownedNfts;
+              }   
           }
 
-
+             return ownedNfts;
      }
    
     function executeSale(uint256 tokenId) public payable {

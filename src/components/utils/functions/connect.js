@@ -122,5 +122,30 @@ export async function getWalletConnected () {
       }
   }
 
-  
+  //  function addWalletlistener () {
+
+  //       if (window.ethereum) {
+  //       window.ethereum.on("accountsChanged", (accounts)=> {
+  //           if (accounts.length > 0 ) {
+  //              setWalletAddress(accounts[0]);
+  //              setStatus("Connected")
+  //                 }else{
+  //                     setStatus("not Connected") 
+  //                 }
+  //             })  
+  //             }
+  //         }
+
+ 
+
+  // useEffect(() => { 
+    //     async function fetchdata (){
+    //         const {address, status} = await getWalletConnected()
+    //         // setWalletAddress(address);
+    //         setStatus(status);
+    //     }
+       
+    //     fetchdata ();
+    //     addWalletlistener();
+    //  }, [])
   
