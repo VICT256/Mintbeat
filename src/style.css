@@ -16,41 +16,18 @@ body {
   color: #707070 !important;
 }
 
-input::-moz-selection {
-  color: #707070 !important;
-  border: solid #E9003F !important;
-  border-width: 0 0 3px 0 !important;
-  padding-bottom: 2px;
-  outline: none;
-}
-
-input:focus,
-input:hover,
-input:active,
-input::selection {
-  color: #707070 !important;
-  border: solid #E9003F !important;
-  border-width: 0 0 3px 0 !important;
-  padding-bottom: 2px;
-  outline: none;
-}
-
 textarea::-moz-selection {
   color: #707070 !important;
-  border: solid #E9003F !important;
-  border-width: 0 0 3px 0 !important;
-  padding-bottom: 2px;
-  outline: none;
+    border-bottom: 1px solid #E9003F !important;
+    outline: none;
 }
 
 textarea:focus,
 textarea:hover,
 textarea:active,
 textarea::selection {
-  color: rgb(255, 255, 255) !important;
-  border: solid #E9003F !important;
-  border-width: 0 0 3px 0 !important;
-  padding-bottom: 2px;
+color: #707070 !important;
+  border-bottom: 1px solid #E9003F !important;
   outline: none;
 }
 
@@ -431,8 +408,13 @@ textarea {
   color: #707070 !important;
 }
 
-input[type=text]:focus {
-  border: 1px solid rgb(142, 34, 34);
+input[type=text]:focus,
+input[type=text]:hover,
+input[type=text]:active,
+input[type=text]::selection {
+  color: #707070 !important;
+  border-bottom: 1px solid #E9003F !important;
+  outline: none;
 }
 
 .submit_nft_btn {
