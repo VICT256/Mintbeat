@@ -21,8 +21,8 @@ export default function Dashboard() {
               
              try { 
                     //create an NFT Token
-                    await ConnectToMetamask()
-                    // await getWalletConnected ()
+                    // await ConnectToMetamask()
+                    await getWalletConnected ()
                     let mynfts = await contract.getMyNFTs()
                     console.log(mynfts)
                     

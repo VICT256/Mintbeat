@@ -5,7 +5,7 @@ const key= "514e8dc68f65650ab9d5"
 const secret="01ba6da564c298c62de39cfefec18af878b60ae059a8c4c2382a7e1b2028203c"
 
 
- export const fileUpload = async(formData, name, title, description) => {
+ export const fileUpload = async(formData, name, title, description,external_url) => {
 
     try{
       const res = await axios.post("https://api.pinata.cloud/pinning/pinFileToIPFS", formData, {
@@ -23,10 +23,17 @@ const secret="01ba6da564c298c62de39cfefec18af878b60ae059a8c4c2382a7e1b2028203c"
          var imageURL = pinataURL+res.data.IpfsHash
 
          const metadata = {
-            name : name,
-            title: title,
             description : description,
+            external_url : external_url ? "mintbeat_url" :external_url,
+            name : name,
             image : imageURL,
+            attributes: [
+                { 
+                  title: title,
+                  category: "music", 
+                  
+                }] 
+           
          }    
          
          const response =  await uploadJSONToIPFS(metadata)

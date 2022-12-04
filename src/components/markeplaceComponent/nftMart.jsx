@@ -23,8 +23,8 @@ export default function MarketPlaceComponent() {
 
       const tokenURI = await contract.tokenURI(nft.tokenId);
       let meta = await axios.get(tokenURI)
-          meta = meta.data;
-            console.log("hey")
+      meta = meta.data;
+      console.log("hey")
      
       let price = ethers.utils.formatUnits(nft.price.toString(), 'ether')
       let item = {
