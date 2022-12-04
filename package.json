@@ -3,16 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@openzeppelin/contracts": "^4.8.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.2.0",
     "bootstrap": "^5.2.3",
     "daisyui": "^2.42.1",
     "dotenv": "^16.0.3",
+    "ethers": "^5.7.2",
     "flowbite": "^1.5.4",
     "flowbite-react": "^0.3.5",
+    "form-data": "^4.0.0",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-drag-drop-files": "^2.3.8",
     "react-h5-audio-player": "^3.8.6",
@@ -48,10 +51,23 @@
     ]
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.0.0",
+    "@nomiclabs/hardhat-etherscan": "^3.0.0",
+    "@openzeppelin/contracts": "^4.7.3",
+    "@typechain/ethers-v5": "^10.1.0",
+    "@typechain/hardhat": "^6.1.2",
+    "@types/chai": "^4.2.0",
+    "@types/mocha": "^9.1.0",
     "autoprefixer": "^10.4.13",
+    "chai": "^4.2.0",
     "hardhat": "^2.12.2",
+    "hardhat-gas-reporter": "^1.0.8",
     "postcss": "^8.4.19",
-    "tailwindcss": "^3.2.4"
+    "solidity-coverage": "^0.8.1",
+    "tailwindcss": "^3.2.4",
+    "typechain": "^8.1.0"
   }
 }

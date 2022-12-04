@@ -24,3 +24,7 @@ body {
 .react-jinke-music-player-main .music-player-panel .panel-content .rc-slider-track {
   background-color: #E9003F !important;
 }
+
+.react-jinke-music-player-main svg:hover {
+  color: #E9003F !important;
+}
