@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function MarketNFTCard(nft) {
-	console.log(nft.nft, 'nft');
+  console.log(nft.nft, "nft");
 
 	const [data, setData] = useState(nft.nft.metadata);
 	return (
 		<div className="bg-[#000000CC] shadow-lg w-full md:max-w-[466px] rounded-lg">
 			<div className="flex flex-col md:flex-row w-full gap-3 h-full">
-				<img src={data.url} alt="music cover" className="w-full md:w-[200px] h-[180px] md:h-[207px] rounded-l-lg" />	
+				<img src={data.url} alt="music cover" className="w-full md:w-[200px] h-[180px] md:h-[207px] rounded-l-lg" />
 				<div className="h-full p-5 justify-between md:p-3 flex flex-col">
 					<p className="flex flex-col">
 						<span className="text-[#FFFFFF] opacity-[0.75] text-[24px] font-bold">{data.description}</span>

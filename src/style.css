@@ -16,6 +16,10 @@ body {
   color: white !important;
 }
 
+video {
+  padding: 1em;
+}
+
 input::-moz-selection {
   color: rgb(255, 255, 255) !important;
   border: solid #E9003F !important;
