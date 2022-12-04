@@ -5,7 +5,6 @@ import { ConnectToMetamask } from './utils/functions/connect';
 const WalletDropdown = () => {
          const [walletAddress, setWalletAddress] =useState('')
          const[walletBalance, setbalance] = useState("")
-		 const [ethervalue, setEtherValue]= useState("")
 		 const [price, setPrice] = useState('')
 
 		 async function set(){
@@ -16,14 +15,13 @@ const WalletDropdown = () => {
 
 			 var maticprice = await axios.get("https://api.binance.com/api/v3/ticker/price")
 			 setPrice(maticprice.data[499].price)
-			console.log(ethervalue)
 		 }
 
 		 function swap() {alert("Unable to connect Uniswap")}
 
  useEffect(()=>{
 		set()},[walletAddress])
-
+ 
 	return (
 		<div className="bg-[#000] w-[270px] rounded-lg absolute right-[10%] top-[80px] z-10 text-white py-5 px-8 flex flex-col text-sm">
 			<div className="flex justify-between w-full mb-5">

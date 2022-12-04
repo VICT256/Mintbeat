@@ -148,4 +148,26 @@ export async function getWalletConnected () {
     //     fetchdata ();
     //     addWalletlistener();
     //  }, [])
+
+    // const items = await Promise.all(
+// 	allnfts.map(async (i) => {
+// 		const tokenURI = await contract.tokenURI(i.tokenId);
+// 		let meta = await axios.get(tokenURI);
+// 		meta = meta.data;
+
+// 		let price = ethers.utils.formatUnits(i.price.toString(), 'ether');
+// 		let item = {
+// 			name: meta.name,
+// 			title: meta.title,
+// 			description: meta.description,
+// 			image: meta.url,
+// 			price: price,
+// 			tokenId: i.tokenId.toNumber(),
+// 			seller: i.seller,
+// 			owner: i.owner,
+// 		};
+
+// 		return item;
+// 	})
+// );
   

@@ -6,7 +6,9 @@ import NFTcard from "./NFTcard";
 import abi from "../../contractAbi.json"
 
 const contractAddress = "0x07CfE3773b86d15deC743BB7f37d498dF0562F51"
-
+const provider = new ethers.providers.Web3Provider(window.ethereum);
+const signer = provider.getSigner();
+let contract = new ethers.Contract(contractAddress, abi, signer)
 
 export default function Dashboard() {
         
@@ -18,48 +20,40 @@ export default function Dashboard() {
             setLoading(true);
               
              try { 
-                     
-                    const provider = new ethers.providers.Web3Provider(window.ethereum);
-                    const signer = provider.getSigner();
-                    let contract = new ethers.Contract(contractAddress, abi, signer)
-
                     //create an NFT Token
-                    // await ConnectToMetamask()
-                    await getWalletConnected ()
+                    await ConnectToMetamask()
+                    // await getWalletConnected ()
                     let mynfts = await contract.getMyNFTs()
                     console.log(mynfts)
-                    let item;
-                 
-                  for (let nft of mynfts ){
-
-                    const tokenURI = await contract.tokenURI(nft.tokenId);
-                    let meta = await axios.get(tokenURI)
+                    
+                    for (let nft of mynfts ){
+            
+                      const tokenURI = await contract.tokenURI(nft.tokenId);
+                      let meta = await axios.get(tokenURI)
                         meta = meta.data;
-                              console.log("hey")
-                   
-                    let price = ethers.utils.formatUnits(nft.price.toString(), 'ether')
-                    let item = {
-                            name: meta.name,
-                            title: meta.title,
-                            description: meta.description,
-                            image: meta.url,
-                            price: price,
-                            tokenId: nft.tokenId.toNumber(),
-                            seller: nft.seller,
-                            owner: nft.owner,
-                          };
-                      console.log(item)		
-                    return item;
-                  }
-
-                setNFTFetched(item)
-                setNumber(item.length)
-                setLoading(false)
+                        console.log("hey")
+                     
+                      let price = ethers.utils.formatUnits(nft.price.toString(), 'ether')
+                      let item = {
+                              name: meta.name,
+                              title: meta.title,
+                              description: meta.description,
+                              image: meta.url,
+                              price: price,
+                              tokenId: nft.tokenId.toNumber(),
+                              seller: nft.seller,
+                              owner: nft.owner,
+                            };
+                        //  console.log(NFTs)
+                        console.log(item)
+                        
+                          }
+                  
               }
             catch (err){
                 console.log(err)
             }
-
+            console.log(NFTs)	
    } 
       
    useEffect(()=>{
@@ -68,14 +62,13 @@ export default function Dashboard() {
    return (
           <div style={{display: "flex"}} className={""}>
             <h3>no of collection : {numberOfNfts}</h3>
-            {loading? "Loading....": NFTs?.map((nft, index) => { <NFTcard key={index} nft ={nft}/>})}
+            {/* {loading? "Loading....": NFTs.map((nft, index) => { <NFTcard key={index} nft ={nft}/>})} */}
             {/* {NFTs.length > 0 &&  NFTs.map((nft, index)=> <NFTcard key={index} nft={nft} />)} */}
             <button onClick={fetchNFTs}> Fetch NFT</button>
           </div>
         );
 
-      }
-
+}
 
 
 
