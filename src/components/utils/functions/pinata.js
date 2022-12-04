@@ -24,7 +24,7 @@ const secret="01ba6da564c298c62de39cfefec18af878b60ae059a8c4c2382a7e1b2028203c"
 
          const metadata = {
             description : description,
-            external_url : external_url ? "mintbeat_url" :external_url,
+            external_url : external_url ? "mintbeat_url" : external_url,
             name : name,
             image : imageURL,
             attributes: [

@@ -26,10 +26,10 @@ export default function NftInformation() {
   };
 
   const MintNFT = async () => {
-    // if (!name || !description || !price || !selectedFile || !title) {
-    //   alert("Incomplete Field");
-    //   return;
-    // }
+    if (!name || !description || !price || !selectedFile || !title) {
+      alert("Incomplete Field");
+      return;
+    }
 
     const formData = new FormData();
 
@@ -46,14 +46,14 @@ export default function NftInformation() {
     formData.append("pinataOptions", options);
 
     try {
-      // const res = await fileUpload(formData, name, title, description, external_url);
+      const res = await fileUpload(formData, name, title, description, external_url);
 
-      // if (res.success === true) {
+      if (res.success === true) {
         try {
           await ConnectToMetamask();
 
-          // var metadataURL = res.pinataURL;
-          // console.log(metadataURL);
+          var metadataURL = res.pinataURL;
+          console.log(metadataURL);
           const provider = new ethers.providers.Web3Provider(window.ethereum);
           const signer = provider.getSigner();
 
@@ -71,7 +71,7 @@ export default function NftInformation() {
           //var url2 = https://gateway.pinata.cloud/ipfs/QmUSGVFeHLcEp6EFuLT1CSbHGQgRkrdMxciAPghA7nvhyM
           // var url3 https://gateway.pinata.cloud/ipfs/QmdCRNUsGERLXBy4mdhQajqVBaR45dCPGP2ihymokWWGkh
            var url4 = "https://gateway.pinata.cloud/ipfs/QmSA2Q9RaqwDf4MWdZ1xNYyn7PFxajpiVWDrhfNCLSZ2zz"
-          let transaction = await contract.createToken(url4,price,tip);
+          let transaction = await contract.createToken(metadataURL,price,tip);
 
           await transaction.wait();
           // setStatus("NFT Minted Successfully")
@@ -81,9 +81,9 @@ export default function NftInformation() {
         } catch (err) {
           console.log(err.message);
         }
-      // } else {
-      //   setStatus("NFT Upload to PINNATA UNSUCCESSFUL");
-      // }
+      } else {
+        setStatus("NFT Upload to PINNATA UNSUCCESSFUL");
+      }
     } catch (err) {
       console.log(err.message);
     }
