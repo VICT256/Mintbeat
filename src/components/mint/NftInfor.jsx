@@ -7,7 +7,7 @@ import abi from '../../contractAbi.json';
 
 const FormData = require('form-data');
 
-const fileTypes = ['MP4', 'MP3', 'JPG'];
+const fileTypes = ['MP4', 'MP3', 'JPG', 'WAV'];
 var contractAddress = '0x1d0D0cd9Be01fE529896e61FaE08a1662D368A6D'; // for testing
 
 export default function NftInformation() {
@@ -19,6 +19,7 @@ export default function NftInformation() {
 	const [price, setPrice] = useState('');
 	const [selectedFile, setSelectedFile] = useState();
 	const [title, setTitle] = useState('');
+	const [external_url, setExternalURL] = useState('');
 
 	const changeHandler = (file) => {
 		setSelectedFile(file);
@@ -45,7 +46,7 @@ export default function NftInformation() {
 		formData.append('pinataOptions', options);
 
 		try {
-			const res = await fileUpload(formData, name, title, description);
+			const res = await fileUpload(formData, name, title, description, external_url);
 
 			if (res.success === true) {
 				try {
@@ -60,18 +61,17 @@ export default function NftInformation() {
 					let contract = new ethers.Contract(contractAddress, abi, signer);
 					ethers.utils.parseEther(price);
 
-					let listingPrice = await contract.getListPrice();
-					listingPrice = listingPrice.toString();
+					// let listingPrice = await contract.getListPrice();
+					// listingPrice = listingPrice.toString();
 
 					//actually create the NFT
-					let tip = { value: ethers.utils.parseEther('0.5') };
+					let tip = { value: ethers.utils.parseEther('0.1') };
 
 					//  var url1 = "https://gateway.pinata.cloud/ipfs/QmcZKH8Vu5D8CAkANQg5ocHmFsmzDqVQXh2efM6NRcCgoQ"
 					//var url2 = https://gateway.pinata.cloud/ipfs/QmUSGVFeHLcEp6EFuLT1CSbHGQgRkrdMxciAPghA7nvhyM
 					// var url3 https://gateway.pinata.cloud/ipfs/QmdCRNUsGERLXBy4mdhQajqVBaR45dCPGP2ihymokWWGkh
-					let transaction = await contract.createToken(metadataURL, price, tip, {
-						value: listingPrice,
-					});
+					var url4 = 'https://gateway.pinata.cloud/ipfs/QmSA2Q9RaqwDf4MWdZ1xNYyn7PFxajpiVWDrhfNCLSZ2zz';
+					let transaction = await contract.createToken(metadataURL, price, tip);
 
 					await transaction.wait();
 					// setStatus("NFT Minted Successfully")
@@ -105,7 +105,7 @@ export default function NftInformation() {
 						classes="bg-[#D8043DAD]"
 						types={fileTypes}
 						children={
-							<div className="w-full max-w-[500px] h-[272px] bg-[#D8043DAD] rounded-lg flex flex-col items-center justify-center">
+							<div className="w-full h-[272px] bg-[#D8043DAD] rounded-lg flex flex-col items-center justify-center">
 								<img src="/images/cloud.jpeg" alt="" className="rounded-full w-32 h-32" />
 								<p className="text-[#ffffffcc] mt-3">
 									Drop your file here <br />
@@ -119,25 +119,25 @@ export default function NftInformation() {
 						{' '}
 						* Upload should not exceed 1GB filesize *
 					</label>
-					<br></br>
-					{/* <input
-            onChange={e => setRoyalty(e.target.value)}
-            type="text"
-            id="royalty"
-            name="royalty"
-            value="royalty"
-            className="royalty"
-          /> */}
-					<br></br>
-					<input
-						onChange={(e) => setPrice(e.target.value)}
-						type="text"
-						id="lname"
-						className="placeholder:text-[#707070]"
-						name="price"
-						placeholder="Price in Munbai.."
-					/>
-					<br />
+					<div className="flex mt-5">
+						<input
+							onChange={(e) => setExternalURL(e.target.value)}
+							type="text"
+							id="royalty"
+							name="royalty"
+							value=""
+							className="w-1/2"
+							placeholder="Royalty"
+						/>
+						<input
+							onChange={(e) => setPrice(e.target.value)}
+							type="text"
+							id="lname"
+							className="w-1/2"
+							name="price"
+							placeholder="Price in Munbai.."
+						/>
+					</div>
 					<button
 						onClick={MintNFT}
 						// disabled={status}
@@ -178,7 +178,7 @@ export default function NftInformation() {
 						rows={8}
 					></textarea>
 
-					<select onChange={(e) => setCategory(e.target.value)} id="category" className='w-1/2' name="category">
+					<select onChange={(e) => setCategory(e.target.value)} id="category" className="w-1/2" name="category">
 						<option value="category">Choose category</option>
 						<option value="option">music video </option>
 						<option value="option">audio music</option>
