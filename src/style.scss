@@ -7,7 +7,9 @@ body{
 ::placeholder {
     color: white !important;
 }
-
+video{
+  padding: 1em;
+}
 input:focus,
 input:hover,
 input:active,
