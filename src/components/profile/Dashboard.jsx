@@ -38,7 +38,7 @@ export default function Dashboard() {
                               name: meta.name,
                               title: meta.title,
                               description: meta.description,
-                              image: meta.url,
+                              image: meta.image,
                               price: price,
                               tokenId: nft.tokenId.toNumber(),
                               seller: nft.seller,

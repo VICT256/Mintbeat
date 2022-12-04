@@ -39,21 +39,21 @@ export default function MarketPlaceComponent() {
 	const fetchAllNFTs = async () => {
                 setLoading(true);
 
-                try {
-                      // await ConnectToMetamask();
-                      // await getWalletConnected();
+          try {
+                // await ConnectToMetamask();
+                // await getWalletConnected();
 
-                      //create an NFT Token
-                      let allnfts = await contract.getAllNFTs();
-                      console.log(allnfts);
-                      const res = await handleArray(allnfts);
-                      console.log(res, 'red');
-                      setNFTS(res);
+                //create an NFT Token
+                let allnfts = await contract.getAllNFTs();
+                console.log(allnfts);
+                const res = await handleArray(allnfts);
+                console.log(res, 'red');
+                setNFTS(res);
 
-                      setLoading(false);
-                } catch (err) {
-                  console.log(err);
-                }
+                setLoading(false);
+          } catch (err) {
+            console.log(err);
+          }
 	};
 
 	const fetchNFTsForCollection = async () => {
