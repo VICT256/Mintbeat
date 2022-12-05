@@ -76,43 +76,42 @@ export default function Dashboard() {
     fetchMyNFTs()
 })
    return (
-    <div className="mt-[32px] w-full">
-      <div className="w-full mb-10">
-        <div className="mb-[25px]">
-          <h1 className="text-[2rem] text-[#ffffff] font-bold">Your NFTs collection</h1>
+          <div className="mt-[32px] w-full">
+            <div className="w-full mb-10">
+              <div className="mb-[25px]">
+                <h1 className="text-[2rem] text-[#ffffff] font-bold">Your NFTs collection</h1>
+              </div>
+
+              <div className="flex flex-wrap gap-5 items-center w-full">
+              {loading ? (
+                "Loading...."
+              ) : (
+                <>
+                  {NFTs.length > 0 ? (
+                    NFTs?.map((nft, index) => {
+                      return (
+                        <div key={index} className="w-full md:w-auto">
+                          <NFTcard nft={nft} />
+                        </div>
+                      );
+                    })
+                  ) : (
+                    <div>No NFT to display</div>
+                  )}
+                </>
+              )}
+            </div>
+          </div>
         </div>
 
-        <div className="flex flex-wrap gap-5 items-center w-full">
-        {loading ? (
-          "Loading...."
-        ) : (
-          <>
-            {NFTs.length > 0 ? (
-              NFTs?.map((nft, index) => {
-                return (
-                  <div key={index} className="w-full md:w-auto">
-                    <NFTcard nft={nft} />
-                  </div>
-                );
-              })
-            ) : (
-              <div>No NFT to display</div>
-            )}
-          </>
-        )}
-      </div>
-    </div>
-  </div>
-
-
+     );
           // <div style={{display: "flex"}} className={""}>
           //   <h3>no of collection : {numberOfNfts}</h3>
           //   {/* {loading? "Loading....": NFTs.map((nft, index) => { <NFTcard key={index} nft ={nft}/>})} */}
           //   {/* {NFTs.length > 0 &&  NFTs.map((nft, index)=> <NFTcard key={index} nft={nft} />)} */}
           //   <button onClick={fetchNFTs}> Fetch NFT</button>
           // </div>
-        );
-
+       
 }
 
 

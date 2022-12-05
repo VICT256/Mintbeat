@@ -8,16 +8,21 @@ function NFTcard(nft) {
 	return (
 		<div className="bg-[#000000CC] shadow-lg w-full md:max-w-[466px] rounded-lg">
 			<div className="flex flex-col md:flex-row w-full gap-3 h-full">
-				<img src={nft.media[0].gateway} alt="music cover" className="w-full md:w-[200px] h-[180px] md:h-[207px] rounded-l-lg" />
+				{/* <img src={data.url} alt="music cover" className="w-full md:w-[200px] h-[180px] md:h-[207px] rounded-l-lg" /> */}
+				<video controls className="w-full md:w-[200px] h-[180px] md:h-[207px] rounded-l-lg">
+					<source src= {data.url} type="video/mp4" />
+					<source src= {data.url} type="video/wav" />
+					Your browser does not support the video tag.
+				</video>
 				<div className="h-full p-5 justify-between md:p-3 flex flex-col">
 					<p className="flex flex-col">
-						<span className="text-[#FFFFFF] opacity-[0.75] text-[24px] font-bold">{data.tokenID}</span>
-						<span className="text-[#C4C4C4] text-[16px]">{nft.title}</span>
-						<span className="text-[#FBF1F3] text-[18px]">By {data.name}</span>
+						<span className="text-[#FFFFFF] opacity-[0.75] text-[24px] font-bold">{data.name}</span>
+						<span className="text-[#C4C4C4] text-[16px]">{data.title}</span>
+						<span className="text-[#FBF1F3] text-[18px]">By {data.description}</span>
 						{/* <span className="text-[#C4C4C4] text-sm">Nov 20 2022</span> */}
 					</p>
 					<div className="flex items-center justify-between mt-5">
-						<p>{nft.tokenID}</p>
+						<p>{data.tokenID}</p>
 						<button className="btn-primary bg-[#E9003F] px-3 py-2">
 							<span>Sell on Marketplace </span>
 						</button>

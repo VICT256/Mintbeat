@@ -25,10 +25,13 @@ const WalletDropdown = () => {
 	return (
 		<div className="bg-[#000] w-[270px] rounded-lg absolute right-[10%] top-[80px] z-10 text-white py-5 px-8 flex flex-col text-sm">
 			<div className="flex justify-between w-full mb-5">
-				<p>{walletAddress.length > 0 ? ("Connected: " + String(walletAddress).substring(0, 6) +"..." +String(walletAddress).substring(38)) : ( <span>Connect Wallet</span>)}</p>
+				
 				<br></br>
 				<br></br>
-				<p>Total Balance:  {`$${walletBalance * price}`}</p>
+				<p>Total Balance: </p>
+				<br></br>
+				<p></p>
+				<p>{`$${(walletBalance * price).toFixed(4)}`}</p>
 			</div>
 
 			<div className="grid grid-cols-2 gap-5 w-full">

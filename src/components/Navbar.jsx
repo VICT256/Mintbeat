@@ -10,14 +10,15 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 export default function NavBar() {
 	const [active, setActive] = useState(false);
 	const [dropdown, setdropdown] = useState(false);
+	const [walletAddress, setWalletAddress] = useState("")
 
 	const handleClick = () => {
 		setActive(!active);
 	};
 
-	const handleConnect = () => {
-		ConnectToMetamask();
-
+	const handleConnect =async  () => {
+		const {address} = await ConnectToMetamask();
+           setWalletAddress(address)
 		//If wallet is connected, handle dropdown toggle
 		setdropdown(!dropdown);
 	};
@@ -95,6 +96,16 @@ export default function NavBar() {
 							/>
 						</ul>
 					</div>
+					<div style={{marginRight:100}} className="">
+						<ul className="navbar-nav ">
+							<li className="nav-item nav_wallet">
+								<div  className="cursor-pointer">
+								  <button onClick={handleConnect}>{walletAddress.length > 0 ? ("Connected: " + String(walletAddress).substring(0, 6) +"..." +String(walletAddress).substring(38)) : ( <span>ConnectWallet</span>)}</button>    
+								</div>
+							</li>
+						</ul>
+					</div>
+					
 					<div className="collapse justify-content-center hidden lg:block" id="navbarNav ">
 						<ul className="navbar-nav ">
 							<li className="nav-item nav_wallet">
